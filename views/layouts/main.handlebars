@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <title>TOUGHTS</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="link_img" href="/">
+            <img class="img_logo"src="/img/toughts_logo.png">
+        </a>
+        <ul class="lista">
+            <li><a href="/thoughts">Pensamentos</a></li>
+            <li><a href="/login">Entrar</a></li>
+            <li><a href="/register">Registrar</a></li>
+        </ul>
+    </nav>
+    {{#if messages.message}} <!--O flesh messages libera o objeto messages. A chave message foi estabelecida por mim quando chamei o flash no controller para o post de autenticação do usuário. É a nossa menssagem-->
+        <div class="flash_msg">
+            {{messages.message}}
+        </div>
+    {{/if}}
+    <div class="container">
+        {{{body}}}
+    </div>
+    <footer class="footer">
+        <p><span>Thoughts</span> &copy;</p>
+    </footer>
+</body>
+</html>

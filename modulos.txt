@@ -1,0 +1,17 @@
+Módulos externos necessários ao desenvolvimento do projeto:
+- express;
+- express-handlebars;
+- mysq2;
+- sequelize;
+- bcryptjs: este módulo será o responsável por gerar as senhas criptografadas do usuário;
+- connect-flash: será o responsável pelas flash messages;
+- cookie-parser;
+- cookie-session;
+- session-file-store: módulo resposável por armazenar as sessões.
+- express-session;
+- express-flash
+
+O que são cookies e sessions?
+
+Cookies é basicamente um arquivo de texto responsável por armazenar as informaçãoes do usuário no navegador.
+As Sessões também são responsáveis por armazenar as informações do usuário, porém, as informações, nesse caso, são armazenadas no servidor.

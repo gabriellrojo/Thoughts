@@ -1,0 +1,126 @@
+*{
+    background-color: #222;
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #f6982d;
+    height: 85px;
+}
+
+
+.img_logo{
+    max-height: 50px;
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+.lista{
+    display:flex;
+    list-style: none;
+    margin: auto 0;
+    margin-right: 30px;
+}
+
+.lista li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.container{
+    min-height: 80vh;
+    padding: 20px
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #f6982d;
+    height: 85px;
+    
+}
+
+.footer p span{
+    color: #f6982d;
+}
+
+
+.register_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_container div{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0
+}
+
+.register_container div label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.register_container div input{
+    border: 1px solid #f6982d;
+    padding: 10px 10px;
+    width: 35vw;
+
+}
+
+.page_title{
+    border-left: 4px solid #f6982d;
+    padding-left: 10px;
+}
+
+.btn{
+    border: 2px solid #f6982d;
+    color: #f6982d;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    transition: .4s;
+    cursor: pointer
+}
+
+.btn:hover{
+    color: whitesmoke;
+    background-color: #f6982d;;
+}
+
+.login p{
+    text-decoration: none;
+    color: #f6982d;
+}
+
+.link_login{
+    color:#f6982d;
+}
+
+.flash_msg{
+    width: 600px;
+    height: 45px;
+    background-color: tomato;
+    border: 1px solid red;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+
+
+
+
+
