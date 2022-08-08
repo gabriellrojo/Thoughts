@@ -39,7 +39,7 @@ app.use(session({
     cookie: {
         secure: false,
         maxAge: 360000, //tempo de duração: 1 dia. Depois ele deixa de ser válido
-        expires: new Date(Date.now() + 36000), // depois de um dia ele expira automaticamente
+        expires: new Date(Date.now() + 360000), // depois de um dia ele expira automaticamente
         httpOnly: true
     }
 
@@ -50,7 +50,7 @@ app.use(session({
 app.use(flash())
 
 app.use((req, res, next) => { //basicamente estamos pegando o userid (se ele existir) e salvando na res para podermos tê-lo em mãos sempre. Ao decorrer entenderei melhor,
-    if(req.body.userid) {
+    if(req.session.userid) {
         res.locals.session = req.session
     }
 
@@ -61,7 +61,9 @@ app.use("/", authRoute)
 app.use("/thoughts", route)
 app.get("/", ThoughtController.showThoughts)
 
-conn.sync()
+conn
+//.sync({ force: true }) //para o caso de precisar editar a nossa tabela. Ele apaga os dados e corrige o título das colunas atualizado em nosso model, por ex.
+.sync()
 .then(() => {
     app.listen(3000)
     console.log("Conexão efetuada com sucesso")

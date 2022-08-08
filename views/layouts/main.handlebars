@@ -13,18 +13,26 @@
         <a class="link_img" href="/">
             <img class="img_logo"src="/img/toughts_logo.png">
         </a>
-        <ul class="lista">
-            <li><a href="/thoughts">Pensamentos</a></li>
-            <li><a href="/login">Entrar</a></li>
-            <li><a href="/register">Registrar</a></li>
-        </ul>
+        {{#if session.id}}
+            <ul class="lista">
+                <li><a href="/">Pensamentos</a></li>
+                <li><a href="/thoughts/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Sair</a></li>
+            </ul>
+        {{else}}
+            <ul class="lista">
+                <li><a href="/">Pensamentos</a></li>
+                <li><a href="/login">Entrar</a></li>
+                <li><a href="/register">Registrar</a></li>
+            </ul>
+        {{/if}}
     </nav>
     {{#if messages.message}} <!--O flesh messages libera o objeto messages. A chave message foi estabelecida por mim quando chamei o flash no controller para o post de autenticação do usuário. É a nossa menssagem-->
         <div class="flash_msg">
             {{messages.message}}
         </div>
     {{/if}}
-    <div class="container">
+    <div class="container_body">
         {{{body}}}
     </div>
     <footer class="footer">

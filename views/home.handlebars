@@ -1,1 +1,13 @@
-<h1>Todos os pensamentos</h1>
+<div class="container">
+    <div>
+        <h1 class="title">Todos os pensamentos</h1>
+        {{#each thoughtsData}}
+        <div class="thoughts_container">
+            <p class="thoughts_home">"{{this.title}}"</p>
+            <p>por: <span class="author">{{this.User.name}}</span></p>
+        </div>
+        {{/each}}
+    </div>  
+</div>
+
+

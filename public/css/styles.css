@@ -34,7 +34,7 @@
     margin-right: 15px;
 }
 
-.container{
+.container_body{
     min-height: 80vh;
     padding: 20px
 }
@@ -53,24 +53,24 @@
 }
 
 
-.register_container{
+.container{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.register_container div{
+.container div{
     display: flex;
     flex-direction: column;
     margin: 20px 0
 }
 
-.register_container div label {
+.container div label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.register_container div input{
+.container div input{
     border: 1px solid #f6982d;
     padding: 10px 10px;
     width: 35vw;
@@ -78,7 +78,7 @@
 }
 
 .page_title{
-    border-left: 4px solid #f6982d;
+    border-left: 3px solid #f6982d;
     padding-left: 10px;
 }
 
@@ -90,7 +90,8 @@
     padding: 10px 20px;
     margin-bottom: 30px;
     transition: .4s;
-    cursor: pointer
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .btn:hover{
@@ -119,8 +120,78 @@
     padding-top: 10px;
 }
 
+.dashboard_container{
+    display: flex;
+    justify-content: space-between;
+}
 
+.dashboard_list{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #f6982d;
+    padding: 20px;
+    font-weight: bold;
+    color: #f6982d;
+}
 
+.list{
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    margin-right: 10px;
+    padding: 14px;
+    
+}
 
+.thought{
+    margin-bottom: 0;
+}
+
+.container_thoughts{
+    margin-top: 30px;
+}
+
+.btns{
+    display: flex
+}
+
+.form_input{
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    transition: .4s;
+    cursor: pointer;
+    text-decoration: none;
+    height: 50px;
+}
+
+.form_input:hover{
+    color: whitesmoke;
+    background-color: #f6982d;
+}
+
+.author{
+    color:#f6982d
+}
+
+.thoughts_home{
+    font-style: italic;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.title{
+    margin-bottom: 50px;
+    border-left: 3px solid #f6982d;
+    padding-left: 10px;
+
+}
+
+.thoughts_container{
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
 
 

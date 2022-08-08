@@ -10,7 +10,7 @@ const User = conn.define("User", {
         type: DataTypes.STRING,
         require: true
     },
-    senha: {
+    password: {
         type: DataTypes.STRING,
         require: true
     }

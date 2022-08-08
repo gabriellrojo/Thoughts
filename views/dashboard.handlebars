@@ -1,0 +1,21 @@
+<div>
+    <div class="dashboard_container">
+        <h1 class="page_title">Dashboard</h1>
+        <a href="/thoughts/add" class="btn thought">Criar Pensamento</a>
+    </div>
+    <div class="container_thoughts">
+        {{#each thoughtsUser}}
+        <div class="dashboard_list">
+            <p class="thoughts">{{this.title}}</p>
+            <div class="btns">
+                <a href="/thoughts/edit/{{this.id}}" class="btn list">Editar</a>
+                <form action="/thoughts/delete" method="post">
+                    <input type="hidden" name="id" value={{this.id}}>
+                    <input type="submit" value="Exluir" class="form_input">
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    
+</div>
