@@ -194,4 +194,27 @@
     border-bottom: 1px solid rgb(168, 168, 168);
 }
 
+#btn_busca {
+    width: 200px;
+    cursor: pointer;
+}
+
+#btn_busca:hover{
+    color: whitesmoke;
+    background-color: #f6982d;;
+}
+
+.title span{
+    color: #f6982d;
+    font-style: italic;
+}
+
+h3{
+    font-style: italic;
+    margin-bottom: 2em ;
+}
+
+h3 span{
+    color: #f6982d;
+}
 

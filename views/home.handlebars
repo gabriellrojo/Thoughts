@@ -1,6 +1,18 @@
 <div class="container">
     <div>
-        <h1 class="title">Todos os pensamentos</h1>
+        {{#if search}}
+            <h1 class="title">Você está buscando por: <span>{{search.title}}</span></h1>
+            <h3>Foram encontrados <span>{{thoughtsData.length}}</span> pensamentos</h3>
+        {{else}}
+            <h1 class="title">Todos os pensamentos</h1>
+        {{/if}}
+        <form action="/" method="get">
+            <input type="text" placeholder="Está buscando por algo?" name="search">
+            <input type="submit" value="buscar" id="btn_busca">
+            {{#if search}}
+                <a href="/"><input id="btn_busca" type="submit" value="voltar"></a>
+            {{/if}}
+        </form>
         {{#each thoughtsData}}
         <div class="thoughts_container">
             <p class="thoughts_home">"{{this.title}}"</p>

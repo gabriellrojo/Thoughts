@@ -1,14 +1,29 @@
 const User = require("../models/User")
 const Thought = require("../models/Thought")
 const flash = require("express-flash")
+const { Op } = require("sequelize")
 
 module.exports = class ThoughtController {
     static showThoughts = async (req, res) => {
 
-        const thoughts = await Thought.findAll({include: User})
+        let search = ""
+        const page = {}
+
+        if(req.query.search){
+            search = req.query.search
+            const page = {
+                title: search
+            }
+            res.locals.search = page
+        }
+
+        const thoughts = await Thought.findAll({include: User, where: {
+            title: {[Op.like]: `%${search}%`}
+        }})
         const thoughtsData = thoughts.map(data => data.get({ plain: true })) //esse método joga todos os dados no mesmo array. Thought e User)
+        
         try{
-            res.render("home", { thoughtsData })
+            res.render("home", { thoughtsData, page })
         } catch(error){
             console.log(error)
         }
@@ -17,6 +32,10 @@ module.exports = class ThoughtController {
 
     static dashboard = async (req, res) => {
         const userid = req.session.userid
+
+        if(!userid){
+            return
+        }
         
         const thoughtsUser = await Thought.findAll({raw: true, where:{UserId: userid}})
 
